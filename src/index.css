@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Professional Security Dashboard Design System - CodeGuardian Suite */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Security Theme Colors */
+    --background: 0 0% 99%;
+    --foreground: 210 17% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 17% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 17% 14%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Security Primary - Deep Blue */
+    --primary: 210 100% 26%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 210 100% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Security Secondary - Professional Gray */
+    --secondary: 210 16% 93%;
+    --secondary-foreground: 210 17% 14%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 16% 96%;
+    --muted-foreground: 210 9% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 16% 93%;
+    --accent-foreground: 210 17% 14%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Security Status Colors */
+    --destructive: 0 85% 58%;
+    --destructive-foreground: 0 0% 98%;
+    --warning: 42 87% 55%;
+    --warning-foreground: 42 13% 12%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --info: 210 100% 45%;
+    --info-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 210 100% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Security Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-security: linear-gradient(135deg, hsl(210 100% 26%), hsl(195 100% 39%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 16% 98%));
+    --gradient-critical: linear-gradient(135deg, hsl(0 85% 58%), hsl(15 85% 58%));
+    
+    /* Security Shadows */
+    --shadow-security: 0 4px 24px -6px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 2px 16px -4px hsl(210 17% 14% / 0.08);
+    --shadow-glow: 0 0 32px hsl(var(--primary-glow) / 0.2);
 
     --sidebar-background: 0 0% 98%;
 
