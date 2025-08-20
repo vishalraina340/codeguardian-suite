@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { 
   Shield, 
   Cloud, 
@@ -16,52 +15,8 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
-import SASTDetails from "./SASTDetails";
-import IaCDetails from "./IaCDetails";
-import SCADetails from "./SCADetails";
 
 const SecurityFeatures = () => {
-  const { toast } = useToast();
-  const [activeDetail, setActiveDetail] = useState<string | null>(null);
-
-  const handleViewDetails = (featureName: string, index: number) => {
-    if (index < 3) {
-      // Show detailed views for first 3 features
-      if (index === 0) setActiveDetail("SAST");
-      if (index === 1) setActiveDetail("IaC");
-      if (index === 2) setActiveDetail("SCA");
-    } else if (index < 6) {
-      toast({
-        title: `${featureName} Details`,
-        description: `Opening detailed view for ${featureName}. Showing latest scan results and security findings.`,
-      });
-    }
-  };
-
-  const handleConfigure = (featureName: string, index: number) => {
-    if (index < 6) {
-      toast({
-        title: `Configure ${featureName}`,
-        description: `Opening configuration panel for ${featureName}. You can adjust scan schedules and thresholds.`,
-      });
-    }
-  };
-
-  const handleBackToDashboard = () => {
-    setActiveDetail(null);
-  };
-
-  // Show detail view if one is active
-  if (activeDetail === "SAST") {
-    return <SASTDetails onBack={handleBackToDashboard} />;
-  }
-  if (activeDetail === "IaC") {
-    return <IaCDetails onBack={handleBackToDashboard} />;
-  }
-  if (activeDetail === "SCA") {
-    return <SCADetails onBack={handleBackToDashboard} />;
-  }
   const features = [
     {
       title: "SAST",
@@ -213,20 +168,10 @@ const SecurityFeatures = () => {
                 )}
               </div>
               <div className="flex space-x-2">
-                <Button 
-                  size="sm" 
-                  className="flex-1"
-                  onClick={() => handleViewDetails(feature.title, index)}
-                  disabled={index >= 6}
-                >
+                <Button size="sm" className="flex-1">
                   View Details
                 </Button>
-                <Button 
-                  size="sm" 
-                  variant="outline"
-                  onClick={() => handleConfigure(feature.title, index)}
-                  disabled={index >= 6}
-                >
+                <Button size="sm" variant="outline">
                   Configure
                 </Button>
               </div>
